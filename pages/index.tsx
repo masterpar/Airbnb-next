@@ -17,7 +17,12 @@ const Home: NextPage = () => {
 
         {/*Banner*/}
         <Banner/>
-        {/*<Banner/>*/}
+
+        <main className="max-w-7xl xl:mx-auto mx-6">
+            <section className="mt-6">
+                <h2 className="text-4xl font-medium font-Unbounded pb-5">Explore Nearby</h2>
+            </section>
+        </main>
 
     </div>
 
