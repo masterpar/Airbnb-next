@@ -1,5 +1,5 @@
 module.exports = {
     images: {
-        domains: ['cdn.worldvectorlogo.com','new-hls.s3.amazonaws.com']
+        domains: ['cdn.worldvectorlogo.com','new-hls.s3.amazonaws.com', 'pixabay.com']
     }
 }
