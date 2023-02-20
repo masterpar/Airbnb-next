@@ -2,8 +2,7 @@ import Image from "next/image";
 
 function LargeCard({  tags, webformatURL, likes}) {
     return (
-        <div className="relative space-x-4  items-center  flex
-                rounded-2xl" >
+        <div className="relative space-x-4  items-center flex rounded-2xl mt-8" >
             <div className="relative h-96 w-[100%]">
                 <Image
                     src={webformatURL}
