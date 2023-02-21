@@ -65,7 +65,7 @@ const Home = ({ exploreData, cardsData }) => {
             <section>
                 <LargeCard
                    tags='new hosts'
-                   webformatURL='https://pixabay.com/get/g22aebf422e931a8cb127a969ce0083c940902ebb868891004d8f3ccd3033af179b9463c75f17352f3d3d495b959a00c5f25fd17552afb8c3badeda240daccce9_640.jpg'
+                   webformatURL={cardsData.hits[12].webformatURL}
                    likes='32'
                 />
 
