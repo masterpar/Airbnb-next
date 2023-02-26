@@ -22,7 +22,10 @@ const Home = ({ exploreData, cardsData }) => {
         <Header/>
 
         {/*Banner*/}
-        <Banner/>
+        <Banner
+            tags='new hosts'
+            webformatURL={cardsData.hits[Math.floor(Math.random()*cardsData.hits.length)].webformatURL}
+        />
 
         <main className="max-w-7xl xl:mx-auto mx-6">
             {/*explore Nearby*/}
