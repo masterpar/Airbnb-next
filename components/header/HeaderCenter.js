@@ -1,5 +1,5 @@
 import {useState} from "react";
-import {MagnifyingGlassIcon} from "@heroicons/react/24/solid";
+import {MagnifyingGlassIcon, UserGroupIcon} from "@heroicons/react/24/solid";
 
 import 'react-date-range/dist/styles.css'; // main style file
 import 'react-date-range/dist/theme/default.css'; // theme css file
@@ -11,6 +11,7 @@ function HeaderCenter() {
     const [searchInput, setSearchInput] = useState('');
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
+    const [noOfGuests, setNoOfGuests] = useState(1);
 
     const selectionRange = {
         startDate: startDate,
@@ -23,6 +24,9 @@ function HeaderCenter() {
         setEndDate(ranges.selection.endDate);
     }
 
+    const resetInput = () => {
+      setSearchInput('')
+    }
 
     return (
         <div>
@@ -49,6 +53,30 @@ function HeaderCenter() {
                         onChange={handleSelect}
                         className="w-[150px] sm:w-full"
                     />
+                    <div className="flex items-center  bg-white pt-3 ">
+                        <h2 className="text-xl pl-4 flex-grow border-b font-light font-Unbounded">
+                            Number a Guests
+                        </h2>
+                        <UserGroupIcon className="h-4 w-4"/>
+                        <input
+                            value={noOfGuests}
+                            onChange={(e) => setNoOfGuests(e.target.value)}
+                            type="number"
+                            min={1}
+                            className="w-12 pl-2 text-lg outline-none border-b-2 text-red-500"
+                        />
+                    </div>
+                    <div className="flex bg-white p-3">
+                        <button
+                            className="flex-grow text-gray-500"
+                            onClick={resetInput}
+                        >
+                            Cancel
+                        </button>
+                        <button className="flex-grow text-red-500">
+                            Search
+                        </button>
+                    </div>
                 </div>)
             }
         </div>
