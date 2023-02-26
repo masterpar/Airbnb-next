@@ -45,15 +45,15 @@ function HeaderCenter() {
                 />
             </div>
             {searchInput && (
-                <div className="absolute left-2 lg:left-auto ">
+                <div className="flex flex-col absolute left-0 md:left-auto bg-white w-[475px]">
                     <DateRangePicker
                         ranges={[selectionRange]}
                         minDate={new Date()}
                         rangeColors={['#FD5B61']}
                         onChange={handleSelect}
-                        className="w-[150px] sm:w-full"
+                        className="w-[180px]"
                     />
-                    <div className="flex items-center  bg-white pt-3 ">
+                    <div className="flex items-center pt-3">
                         <h2 className="text-xl pl-4 flex-grow border-b font-light font-Unbounded">
                             Number a Guests
                         </h2>
@@ -66,7 +66,7 @@ function HeaderCenter() {
                             className="w-12 pl-2 text-lg outline-none border-b-2 text-red-500"
                         />
                     </div>
-                    <div className="flex bg-white p-3">
+                    <div className="flex p-3">
                         <button
                             className="flex-grow text-gray-500"
                             onClick={resetInput}
