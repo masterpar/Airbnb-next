@@ -15,14 +15,19 @@ function HeaderCenter() {
     const selectionRange = {
         startDate: startDate,
         endDate: endDate,
-        key: 'Selection'
+        key: 'selection'
+    }
+
+    const handleSelect = (ranges) => {
+        setStartDate(ranges.selection.startDate);
+        setEndDate(ranges.selection.endDate);
     }
 
 
     return (
         <div>
             <div className="flex items-center justify-between
-                                     border-b-2 rounded-full py-2 hover:shadow-md">
+                            border-b-2 rounded-full py-2 hover:shadow-md">
                 <input
                     className="pl-3 bg-transparent text-sm text-gray-400 outline-none w-full"
                     type="text"
@@ -36,9 +41,13 @@ function HeaderCenter() {
                 />
             </div>
             {searchInput && (
-                <div className="absolute">
+                <div>
                     <DateRangePicker
                         ranges={[selectionRange]}
+                        minDate={new Date()}
+                        rangeColors={['#FD5B61']}
+                        onChange={handleSelect}
+                        className="absolute right-0"
                     />
                 </div>)
             }
