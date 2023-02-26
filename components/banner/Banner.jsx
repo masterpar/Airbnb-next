@@ -10,7 +10,7 @@ function Banner() {
                 style={{objectFit:"cover"}}
             />
             <div className="absolute top-2/3 w-full text-center">
-                <p className="text-sm font-semibold text-3xl text-white drop-shadow-xl">
+                <p className="text-xl font-semibold lg:text-3xl text-white drop-shadow-xl">
                     Not sure where to go? Perfect.</p>
                 <button
                     className="text-purple-500 bg-white px-10 py-3 mt-4 rounded-full
