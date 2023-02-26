@@ -5,7 +5,7 @@ import HeaderRight from "./HeaderRight";
 
 function Header() {
     return (
-        <div>
+        <>
             <header className="sticky top-0 z-50 grid grid-cols-3 bg-white shadow-md py-2">
                 {/*left*/}
                 <HeaderLeft/>
@@ -18,7 +18,7 @@ function Header() {
                 <HeaderRight/>
 
             </header>
-        </div>
+        </>
     )
 }
 

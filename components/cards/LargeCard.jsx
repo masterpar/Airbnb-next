@@ -14,7 +14,7 @@ function LargeCard({  tags, webformatURL, likes}) {
             </div>
 
             <div className="absolute mt-4 top-32 left-12 text-white font-Unbounded">
-                <h3 className="font-normal text-5xl uppercase"> { tags.split(',')[0] }</h3>
+                <h3 className="font-normal text-5xl uppercase shadow-sm"> { tags.split(',')[0] }</h3>
                 <p className="text-sm"> likes: { likes }</p>
                 <button
                     className="mt-3 bg-gray-800 text-white p-3 rounded-full cursor-pointer hover:bg-gray-900
