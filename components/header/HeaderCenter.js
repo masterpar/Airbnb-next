@@ -41,13 +41,13 @@ function HeaderCenter() {
                 />
             </div>
             {searchInput && (
-                <div>
+                <div className="absolute left-2 lg:left-auto ">
                     <DateRangePicker
                         ranges={[selectionRange]}
                         minDate={new Date()}
                         rangeColors={['#FD5B61']}
                         onChange={handleSelect}
-                        className="absolute right-0"
+                        className="w-[150px] sm:w-full"
                     />
                 </div>)
             }
