@@ -2,8 +2,9 @@ import Header from "../components/header/Header";
 import Footer from "../components/footer/Footer";
 import {useRouter} from "next/router";
 import { format } from "date-fns"
+import InforCard from "../components/cards/InforCard";
 
-function Search() {
+function Search( { searchResults}) {
 
     const router = useRouter()
     const { location, startDate, endDate, noOfGuests } = router.query
@@ -15,8 +16,8 @@ function Search() {
 
     return (
         <div>
-            <Header/>
-            <main className="flex">
+            <Header placeholder={ `${location} | ${range} | ${noOfGuests} guests` } />
+            <main className="flex max-w-7xl mx-auto ">
                 <section className="flex-grow font-Unbounded ml-6">
                     <p className=" font-light text-xs mt-12 text-gray-700">
                         300+ stays {range} for {noOfGuests} guets
@@ -32,6 +33,12 @@ function Search() {
                         <p className="button">Rooms and Beds</p>
                         <p className="button">More filters</p>
                     </div>
+
+                    <div className="flex flex-col mt-7 ">
+                        { searchResults.map(place => (
+                            <InforCard key={place.img} {...place}/>
+                        ))}
+                    </div>
                 </section>
 
             </main>
@@ -42,3 +49,15 @@ function Search() {
 }
 
 export default Search;
+
+
+export async function getServerSideProps(){
+    const searchResults = await fetch('https://www.jsonkeeper.com/b/5NPS')
+        .then(res => res.json())
+
+    return {
+        props: {
+            searchResults
+        }
+    }
+}

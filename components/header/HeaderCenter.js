@@ -4,7 +4,7 @@ import {MagnifyingGlassIcon} from "@heroicons/react/24/solid";
 import DateRange from "./DateRange";
 
 
-function HeaderCenter() {
+function HeaderCenter({ placeholder }) {
 
     const [searchInput, setSearchInput] = useState('');
 
@@ -15,7 +15,7 @@ function HeaderCenter() {
                 <input
                     className="pl-3 bg-transparent text-sm text-gray-400 outline-none w-full"
                     type="text"
-                    placeholder="Start your search"
+                    placeholder={placeholder || 'Start ypur search'}
                     value={searchInput}
                     onChange={(e) => setSearchInput(e.target.value)}
                 />
@@ -25,7 +25,10 @@ function HeaderCenter() {
                 />
             </div>
             {searchInput && (
-                <DateRange searchInput={searchInput} setSearchInput={setSearchInput}/>
+                <DateRange
+                    searchInput={searchInput}
+                    setSearchInput={setSearchInput}
+                />
                 )
             }
         </div>
