@@ -34,7 +34,7 @@ function Search( { searchResults}) {
                         <p className="button">More filters</p>
                     </div>
 
-                    <div className="flex flex-col mt-7 ">
+                    <div className="flex flex-col mt-7 mr-6 ">
                         { searchResults.map(place => (
                             <InforCard key={place.img} {...place}/>
                         ))}
