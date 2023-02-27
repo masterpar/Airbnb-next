@@ -1,9 +1,17 @@
 import Image from "next/image";
+import {useRouter} from "next/router";
+
 
 function HeaderLeft() {
+
+    const router = useRouter()
+
     return (
-        <div className="flex  items center reltive cursor-pointer my-auto px-4
-                                md:px-10">
+        <div
+            className="flex items center reltive cursor-pointer
+                         my-auto px-4 md:px-10"
+            onClick={() => router.push('/')}
+        >
             <Image
                 src="https://cdn.worldvectorlogo.com/logos/airbnb.svg"
                 alt=""
