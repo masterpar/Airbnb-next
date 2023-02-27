@@ -16,7 +16,7 @@ function InforCard({ img, location, title, description, star, price, total, long
             />
             </div>
 
-            <div className="flex flex-col flex-grow pl-5 py-3">
+            <div className="flex flex-col flex-grow pl-5 pr-10 py-3">
                 <div className="flex justify-between">
                     <p className="text-sm text-gray-500 font-light">{ location }</p>
                     <HeartIcon className="h-6 cursor-pointer" />
