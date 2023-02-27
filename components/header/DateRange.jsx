@@ -3,15 +3,20 @@ import {useState} from "react";
 import { DateRangePicker } from 'react-date-range';
 
 import 'react-date-range/dist/styles.css'; // main style file
-import 'react-date-range/dist/theme/default.css'; // theme css file
-function DateRange({ setSearchInput }) {
+import 'react-date-range/dist/theme/default.css';
+import {useRouter} from "next/router"; // theme css file
+
+
+
+function DateRange({ searchInput, setSearchInput }) {
 
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
     const [noOfGuests, setNoOfGuests] = useState(1);
 
+    const router = useRouter()
 
-    const handleSelect = (ranges) => {
+     const handleSelect = (ranges) => {
         setStartDate(ranges.selection.startDate);
         setEndDate(ranges.selection.endDate);
     }
@@ -19,12 +24,25 @@ function DateRange({ setSearchInput }) {
     const resetInput = () => {
         setSearchInput('')
     }
+    
+    const search = () => {
+        router.push({
+            pathname: '/search',
+            query: {
+                location: searchInput,
+                startDate: startDate.toISOString(),
+                endDate: endDate.toISOString(),
+                noOfGuests
+            }
+        })
+    }
 
     const selectionRange = {
         startDate: startDate,
         endDate: endDate,
         key: 'selection'
     }
+
 
     return (
         <div className="flex flex-col absolute left-0 md:left-auto bg-white w-[475px]">
@@ -55,7 +73,10 @@ function DateRange({ setSearchInput }) {
                 >
                     Cancel
                 </button>
-                <button className="flex-grow text-red-500">
+                <button
+                    className="flex-grow text-red-500"
+                    onClick={search}
+                >
                     Search
                 </button>
             </div>

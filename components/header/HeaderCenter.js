@@ -25,7 +25,7 @@ function HeaderCenter() {
                 />
             </div>
             {searchInput && (
-                <DateRange  setSearchInput={setSearchInput}/>
+                <DateRange searchInput={searchInput} setSearchInput={setSearchInput}/>
                 )
             }
         </div>
