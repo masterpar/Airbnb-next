@@ -1,6 +1,7 @@
 import {useState} from "react";
-import ReactMapGl from 'react-map-gl';
+import ReactMapGl, { Marker, Popup} from 'react-map-gl';
 import getCenter from 'geolib/es/getCenter';
+import { MapPinIcon } from '@heroicons/react/24/solid'
 
 function Map({ searchResults }) {
 
@@ -23,7 +24,6 @@ function Map({ searchResults }) {
         zoom: 10
     });
 
-
     return (
         <ReactMapGl
         mapStyle="mapbox://styles/masterpar/clen5fuql002f01thxkh6pzlq"
@@ -31,7 +31,20 @@ function Map({ searchResults }) {
         { ...viewPort}
         onMove={evt => setViewPort(evt.viewPort)}
         >
-
+            { searchResults.map((result) => (
+                <div key={result.long}>
+                    <Marker
+                        longitude={result.long}
+                        latitude={result.lat}
+                        anchor="bottom"
+                    >
+                        <MapPinIcon
+                            className="h-6 w-6 text-white absolute cursor-pointer
+                                        animate-bounce"
+                        />
+                    </Marker>
+                </div>
+            ))}
 
         </ReactMapGl>
     )

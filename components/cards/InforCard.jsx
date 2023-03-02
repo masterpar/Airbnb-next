@@ -2,10 +2,11 @@ import Image from "next/image";
 import  { HeartIcon } from "@heroicons/react/24/outline"
 import {StarIcon} from "@heroicons/react/20/solid";
 
+
 function InforCard({ img, location, title, description, star, price, total, long, lat}) {
     return (
         <div className="flex hover:opacity-80 hover:scale-105
-                        transition transform ease-out hover:shadow-lg first:border-t">
+                        transition transform ease-out hover:shadow-lg first:border-t pr-2">
             <div className="relative h-40 w-40 md:h-52 md:w-150 flex-shrink-0 m-2
                             cursor-pointer ">
             <Image
@@ -40,7 +41,6 @@ function InforCard({ img, location, title, description, star, price, total, long
                         <p className="text-right font-extralight ">{ total }</p>
                     </div>
                 </div>
-
 
             </div>
 

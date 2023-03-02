@@ -22,14 +22,14 @@ function Search( { searchResults}) {
 
                 {/*Cards*/}
                 <section className="font-Unbounded ">
-                    <p className=" font-light text-xs mt-12 text-gray-700">
+                    <p className=" font-light text-xs mt-12 text-gray-700 pl-6">
                         300+ stays {range} for {noOfGuests} guets
                     </p>
-                    <h1 className="text-3xl font-semibold mt-1 capitalize ">
+                    <h1 className="text-3xl font-semibold mt-1 capitalize pl-6 ">
                         Stays in { location }
                     </h1>
 
-                    <div className="hidden 2xl:inline-flex space-x-3 mt-2 text-gray-700 text-sm">
+                    <div className="hidden 2xl:inline-flex space-x-3 mt-2 text-gray-700 text-sm pl-6">
                         <p className="button">Cancellation Flexibility</p>
                         <p className="button">Type of Place</p>
                         <p className="button">Price</p>
