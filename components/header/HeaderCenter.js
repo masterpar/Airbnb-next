@@ -15,7 +15,7 @@ function HeaderCenter({ placeholder }) {
                 <input
                     className="pl-3 bg-transparent text-sm text-gray-400 outline-none w-full"
                     type="text"
-                    placeholder={placeholder || 'Start ypur search'}
+                    placeholder={placeholder || 'Start your search'}
                     value={searchInput}
                     onChange={(e) => setSearchInput(e.target.value)}
                 />
