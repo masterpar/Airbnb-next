@@ -3,6 +3,7 @@ import Footer from "../components/footer/Footer";
 import {useRouter} from "next/router";
 import { format } from "date-fns"
 import InforCard from "../components/cards/InforCard";
+import Map from "../components/mapbox/Map";
 
 function Search( { searchResults}) {
 
@@ -17,8 +18,10 @@ function Search( { searchResults}) {
     return (
         <div>
             <Header placeholder={ `${location} | ${range} | ${noOfGuests} guests` } />
-            <main className="flex max-w-7xl mx-auto ">
-                <section className="flex-grow font-Unbounded ml-6">
+            <main className="flex grid lg:grid-cols-2 ">
+
+                {/*Cards*/}
+                <section className="font-Unbounded ">
                     <p className=" font-light text-xs mt-12 text-gray-700">
                         300+ stays {range} for {noOfGuests} guets
                     </p>
@@ -26,7 +29,7 @@ function Search( { searchResults}) {
                         Stays in { location }
                     </h1>
 
-                    <div className="hidden lg:inline-flex space-x-3 mt-2 text-gray-700 text-sm">
+                    <div className="hidden 2xl:inline-flex space-x-3 mt-2 text-gray-700 text-sm">
                         <p className="button">Cancellation Flexibility</p>
                         <p className="button">Type of Place</p>
                         <p className="button">Price</p>
@@ -34,11 +37,16 @@ function Search( { searchResults}) {
                         <p className="button">More filters</p>
                     </div>
 
-                    <div className="flex flex-col mt-7 mr-6 ">
+                    <div className="flex flex-col mt-7 mx-4 ">
                         { searchResults.map(place => (
                             <InforCard key={place.img} {...place}/>
                         ))}
                     </div>
+                </section>
+
+                {/*Map*/}
+                <section className="hidden lg:inline-flex pl-12 lg:m-w-[500px]  lg:max-h-[1500px] ">
+                    <Map/>
                 </section>
 
             </main>

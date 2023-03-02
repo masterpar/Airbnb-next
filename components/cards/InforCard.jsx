@@ -6,7 +6,8 @@ function InforCard({ img, location, title, description, star, price, total, long
     return (
         <div className="flex hover:opacity-80 hover:scale-105
                         transition transform ease-out hover:shadow-lg first:border-t">
-            <div className="relative h-40 w-40 md:h-52 md:w-80 flex-shrink-0 m-2 cursor-pointer ">
+            <div className="relative h-40 w-40 md:h-52 md:w-150 flex-shrink-0 m-2
+                            cursor-pointer ">
             <Image
                 src={img}
                 fill
@@ -16,7 +17,7 @@ function InforCard({ img, location, title, description, star, price, total, long
             />
             </div>
 
-            <div className="flex flex-col flex-grow pl-5 pr-10 py-3">
+            <div className="flex flex-col flex-grow pl-5 py-3">
                 <div className="flex justify-between">
                     <p className="text-sm text-gray-500 font-light">{ location }</p>
                     <HeartIcon className="h-6 cursor-pointer" />
@@ -25,16 +26,17 @@ function InforCard({ img, location, title, description, star, price, total, long
 
                 <div className="border-b w-10 pt-2"/>
 
-                <p className="pt-2 lg:pr-20 md:text-sm text-[12px] text-gray-400 font-normal flex-grow py-4">
+                <p className="pt-2 xl:pr-10 xl:text-sm  text-[12px] text-gray-400
+                                font-normal flex-grow py-4">
                     { description }
                 </p>
 
-                <div className="flex justify-between items-center">
+                <div className="flex justify-between items-center xl:text-md text-[13px]">
                     <p className="flex  ">
                         <StarIcon className="h-5 text-sm text-red-400 mr-2" /> { star }
                     </p>
                     <div className="pb-3">
-                        <p className="text-md font-semibold pb-1">{ price }</p>
+                        <p className=" font-semibold pb-1">{ price }</p>
                         <p className="text-right font-extralight ">{ total }</p>
                     </div>
                 </div>

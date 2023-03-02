@@ -85,10 +85,10 @@ const Home = ({ exploreData, cardsData }) => {
 
 export async function getStaticProps(){
 
-    const exploreData = await fetch(`https://pixabay.com/api/?key=${process.env.API_PIXABAY}&q=hotels&image_type=photo`)
+    const exploreData = await fetch(`https://pixabay.com/api/?key=${process.env.pixabay_key}&q=hotels&image_type=photo`)
                         .then( (response => response.json()))
 
-    const cardsData = await fetch(`https://pixabay.com/api/?key=${process.env.API_PIXABAY}&q=ciudades&image_type=photo`)
+    const cardsData = await fetch(`https://pixabay.com/api/?key=${process.env.pixabay_key}&q=ciudades&image_type=photo`)
                         .then( (response => response.json()))
         return {
             props: {
