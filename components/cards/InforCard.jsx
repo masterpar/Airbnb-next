@@ -12,7 +12,7 @@ function InforCard({ img, location, title, description, star, price, total, long
             <Image
                 src={img}
                 fill
-                alt=""
+                alt={title}
                 style={{ objectFit: 'cover'}}
                 className="rounded-xl"
             />

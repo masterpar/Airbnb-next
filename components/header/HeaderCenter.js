@@ -13,7 +13,8 @@ function HeaderCenter({ placeholder }) {
             <div className="flex items-center justify-between
                             border-b-2 rounded-full py-2 hover:shadow-md">
                 <input
-                    className="pl-3 bg-transparent text-sm text-gray-400 outline-none w-full"
+                    className="pl-3 bg-transparent text-[12px] font-Unbounded font-extralight
+                                text-gray-400 outline-none w-full capitalize"
                     type="text"
                     placeholder={placeholder || 'Start your search'}
                     value={searchInput}

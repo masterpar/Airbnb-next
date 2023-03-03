@@ -10,26 +10,26 @@ function Search( { searchResults}) {
     const router = useRouter()
     const { location, startDate, endDate, noOfGuests } = router.query
 
-    const formattedStarDate = format(new Date(startDate), 'dd-MMM-yyy')
-    const formattedEndDate = format(new Date(endDate), 'dd-MMM-yyy')
+    const formattedStarDate = format(new Date(startDate), 'dd-MM-yyy')
+    const formattedEndDate = format(new Date(endDate), 'dd-MM-yyy')
 
     const range = `${formattedStarDate} - ${formattedEndDate}`
 
     return (
         <div>
-            <Header placeholder={ `${location} | ${range} | ${noOfGuests} guests` } />
+            <Header placeholder={ `${location} | ${range}` }  />
             <main className="flex grid lg:grid-cols-2 ">
 
                 {/*Cards*/}
                 <section className="font-Unbounded ">
                     <p className=" font-light text-xs mt-12 text-gray-700 pl-6">
-                        300+ stays {range} for {noOfGuests} guets
+                        300+ stays {range} for <span className="font-bold">{noOfGuests} guets </span>
                     </p>
                     <h1 className="text-3xl font-semibold mt-1 capitalize pl-6 ">
                         Stays in { location }
                     </h1>
 
-                    <div className="hidden 2xl:inline-flex space-x-3 mt-2 text-gray-700 text-sm pl-6">
+                    <div className="hidden xl:inline-flex space-x-1 mt-2 text-gray-700 text-[12px] pl-6">
                         <p className="button">Cancellation Flexibility</p>
                         <p className="button">Type of Place</p>
                         <p className="button">Price</p>
@@ -45,8 +45,8 @@ function Search( { searchResults}) {
                 </section>
 
                 {/*Map*/}
-                <section className="hidden lg:inline-flex pl-12 lg:m-w-[500px]  lg:max-h-[1500px] ">
-                    <Map searchResults={searchResults}/ >
+                <section className="hidden lg:inline-flex pl-12 lg:m-w-[500px]  lg:max-h-[1500px] relative">
+                    <Map searchResults={searchResults} />
                 </section>
 
             </main>

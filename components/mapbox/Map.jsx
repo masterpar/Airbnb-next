@@ -13,6 +13,8 @@ function Map({ searchResults }) {
         latitude: result.lat
     }))
 
+    const [selectedLocation, setSelectedLocation] = useState({});
+
     // The latitude and longitude of the center of locations coordinates
     const center = getCenter(coordinates)
 
@@ -33,16 +35,35 @@ function Map({ searchResults }) {
         >
             { searchResults.map((result) => (
                 <div key={result.long}>
-                    <Marker
-                        longitude={result.long}
-                        latitude={result.lat}
-                        anchor="bottom"
-                    >
-                        <MapPinIcon
-                            className="h-6 w-6 text-white absolute cursor-pointer
-                                        animate-bounce"
-                        />
-                    </Marker>
+                    { console.log(result) }
+                        <Marker
+                            longitude={result.long}
+                            latitude={result.lat}
+                            anchor="bottom"
+                            style={{ position: 'relative'}}
+
+                        >
+                            <MapPinIcon
+                                onClick={() => setSelectedLocation(result)}
+                                className="h-6 w-6 text-blue-400 absolute cursor-pointer
+                                            animate-bounce"
+                                aria-label="push-pin"
+                            />
+                        </Marker>
+
+                {/*    The popup that should show if we click on Marker*/}
+                    { selectedLocation.long === result.long ? (
+                        <Popup
+                            onClose={() => setSelectedLocation({})}
+                            closeOnClick={true}
+                            latitude={result.lat}
+                            longitude={result.long}
+                        >
+                            { result.title}
+                        </Popup>
+                    ):
+                        false
+                    }
                 </div>
             ))}
 
